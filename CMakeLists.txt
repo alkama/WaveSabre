@@ -411,11 +411,15 @@ target_include_directories(WaveSabreVstLib PUBLIC ${wsvstlib_root}/include ${wsc
 # WaveSabre VSTs
 set(wsvst_root "${CMAKE_CURRENT_SOURCE_DIR}/Vsts")
 
+include(CMakeWDL.cmake)
+include(CMakeWDLVST.cmake)
+
 lgcm_vstplugin(Adultery ${VSTSDK_ROOT} ${wscore_root} ${wsvstlib_root} ${wsvst_root})
 lgcm_add_vst_resource(Adultery "Data/macOS/gm.dls")
 lgcm_vstplugin(Cathedral ${VSTSDK_ROOT} ${wscore_root} ${wsvstlib_root} ${wsvst_root})
 lgcm_vstplugin(Chamber ${VSTSDK_ROOT} ${wscore_root} ${wsvstlib_root} ${wsvst_root})
-lgcm_vstplugin(Crusher ${VSTSDK_ROOT} ${wscore_root} ${wsvstlib_root} ${wsvst_root})
+#lgcm_vstplugin(Crusher ${VSTSDK_ROOT} ${wscore_root} ${wsvstlib_root} ${wsvst_root})
+alk_vst2plugin(Crusher)
 lgcm_vstplugin(Echo ${VSTSDK_ROOT} ${wscore_root} ${wsvstlib_root} ${wsvst_root})
 lgcm_vstplugin(Falcon ${VSTSDK_ROOT} ${wscore_root} ${wsvstlib_root} ${wsvst_root})
 lgcm_vstplugin(Leveller ${VSTSDK_ROOT} ${wscore_root} ${wsvstlib_root} ${wsvst_root})
